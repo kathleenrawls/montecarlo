@@ -1,3 +1,6 @@
+from . bitstring import BitString
+import numpy as np
+
 class IsingHamiltonian:
     def __init__(self, G):
         self.G = G
