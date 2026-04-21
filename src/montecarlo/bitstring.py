@@ -1,3 +1,4 @@
+import numpy as np
 class BitString:
     """
     Simple class to implement a config of bits
