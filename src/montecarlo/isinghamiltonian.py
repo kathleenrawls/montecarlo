@@ -4,7 +4,7 @@ import numpy as np
 class IsingHamiltonian:
     def __init__(self, G):
         self.G = G
-        self.mus = None
+        self.mus = np.empty(G.number_of_nodes())
 
     def energy(self, bs: BitString):
         spins = []
@@ -20,7 +20,7 @@ class IsingHamiltonian:
             weight = self.G.edges[edge]['weight']
             E += (weight * spins[edge[0]] * spins[edge[1]])
 
-        if (self.mus is not None):
+        if (self.mus.size > 0):
             for i in range(len(spins)):
                 weight = spins[i] * self.mus[i]
                 E += weight
